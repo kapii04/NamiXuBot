@@ -1,7 +1,7 @@
 {
-    "name": "Zaid Userbot",
+    "name": "NamiXuBot",
     "description": "An first Telegram Userbot with multi Clients for Spamming or Mass.",
-    "keywords": ["telegram" "userbot", "Zaid", "pyrogram"],
+    "keywords": ["telegram" "userbot", "mocpi", "pyrogram"],
     "repository": "https://github.com/ITZ-ZAID/ZAID-USERBOT",
   "stack": "container",
     "env": {
