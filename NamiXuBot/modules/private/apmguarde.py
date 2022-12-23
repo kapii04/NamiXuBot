@@ -1,11 +1,11 @@
 from pyrogram import filters, Client
 import asyncio
-from Zaid import SUDO_USER
-from Zaid.modules.help import *
+from NamiXuBot import SUDO_USER
+from NamiXuBot.modules.help import *
 from pyrogram.methods import messages
 from .pmguard import get_arg, denied_users
 
-import Zaid.database.pmpermitdb as Zaid
+import NamiXuBot.database.pmpermitdb as NamiXuBot
 
 
 
@@ -16,10 +16,10 @@ async def pmguard(client, message):
         await message.edit("**I only understand on or off**")
         return
     if arg == "off":
-        await Zaid.set_pm(False)
+        await NamiXuBot.set_pm(False)
         await message.edit("**PM Guard Deactivated**")
     if arg == "on":
-        await Zaid.set_pm(True)
+        await NamiXuBot.set_pm(True)
         await message.edit("**PM Guard Activated**")
 @Client.on_message(filters.command("setpmmsg", ["."]) & filters.me)
 async def setpmmsg(client, message):
@@ -28,10 +28,10 @@ async def setpmmsg(client, message):
         await message.edit("**What message to set**")
         return
     if arg == "default":
-        await Zaid.set_permit_message(Zaid.PMPERMIT_MESSAGE)
+        await NamiXuBot.set_permit_message(Zaid.PMPERMIT_MESSAGE)
         await message.edit("**Anti_PM message set to default**.")
         return
-    await Zaid.set_permit_message(f"`{arg}`")
+    await NamiXuBot.set_permit_message(f"`{arg}`")
     await message.edit("**Custom anti-pm message set**")
 
 
